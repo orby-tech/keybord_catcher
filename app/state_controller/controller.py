@@ -48,10 +48,10 @@ class StateController:
         return datetime.today().strftime('%d_%m_%Y') + '.json'
 
     def get_statistic(self):
-        return dict(self.statistic_of_day.most_common(20))
+        return dict(self.statistic_of_day)
 
     def get_statistic_by_file_name(self, file_name):
-        return dict(Counter(self.read_file(file_name)).most_common(20))
+        return dict(Counter(self.read_file(file_name)).most_common(30))
 
     def get_ignore_list(self):
         return ['lines', 'words', 'simbols']
